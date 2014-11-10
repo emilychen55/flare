@@ -4,5 +4,10 @@
     <string name="app_name">Flare</string>
     <string name="welcome">Welcome to Team Flare\'s Home Automation Prototype Application</string>
     <string name="action_settings">Settings</string>
+    <string name="title_activity_photo_diode">How Much Light, Flare?</string>
+    <string name="photoDiodeTitle">Light Up Your Room</string>
+    <string name="time">Time: </string>
+    <string name="lightQuantityTitle">Light Quantity: </string>
+    <string name="lightQuantity"></string>
 
 </resources>

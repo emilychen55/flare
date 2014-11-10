@@ -20,35 +20,48 @@
 
     <Button
         android:id="@+id/lightOn_btn"
-        android:text="Light On"
+        android:text="How Much Light?"
         android:textColor="#FFFFFF"
-        android:textSize="30sp"
-        android:layout_width="160dp"
-        android:layout_height="60dp"
+        android:textSize="20sp"
+        android:layout_width="200dp"
+        android:layout_height="40dp"
         android:background="@drawable/buttonshape_t1"
         android:shadowColor="#A8A8A8"
         android:shadowDx="0"
         android:shadowDy="0"
         android:shadowRadius="5"
-        android:layout_below="@+id/textView"
-        android:layout_alignLeft="@+id/lightOff_btn"
-        android:layout_alignStart="@+id/lightOff_btn"
-        android:layout_marginTop="69dp" />
-
-    <Button
-        android:id="@+id/lightOff_btn"
-        android:text="Light Off"
-        android:textColor="#FFFFFF"
-        android:textSize="30sp"
-        android:layout_width="160dp"
-        android:layout_height="60dp"
-        android:background="@drawable/buttonshape_t2"
-        android:shadowColor="#A8A8A8"
-        android:shadowDx="0"
-        android:shadowDy="0"
-        android:shadowRadius="5"
+        android:onClick="dataStream"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginBottom="141dp" />
+        android:layout_marginBottom="63dp" />
+
+    <Switch
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Switch"
+        android:textColor="#FFFFFF"
+        android:id="@+id/mySwitch"
+        android:textSize="25sp"
+        android:background="@drawable/switchshape"
+        android:checked="false"
+        android:textOn="Flare On"
+        android:textOff="Flare Off"
+        android:onClick="switchInit"
+        android:layout_marginTop="56dp"
+        android:layout_below="@+id/textView"
+        android:layout_centerHorizontal="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/lightQuantity"
+        android:textSize="25sp"
+        android:text="The Magic # is..."
+        android:gravity="center"
+        android:textColor="#FFFFFF"
+        android:background="@drawable/photodiode"
+        android:layout_marginBottom="62dp"
+        android:layout_above="@+id/lightOn_btn"
+        android:layout_centerHorizontal="true" />
 
 </RelativeLayout>
