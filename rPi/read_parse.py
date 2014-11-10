@@ -1,7 +1,7 @@
 import ParsePy
 import serial
 import time
-ser = serial.Serial(port="/dev/tty.usbmodem1421", baudrate=9600)
+ser = serial.Serial(port="/dev/serial/by-id/usb-Arduino__www.arduino.cc__0043_75331313133351309092-if00", baudrate=9600)
 ser.flushInput()
 ser.flushOutput()
 
@@ -36,8 +36,8 @@ while 1:
 			time.sleep(.1)
 			last_command = 1
 
-
 	except KeyboardInterrupt:
 		ser.flushInput()
 		ser.flushOutput()
 		ser.close()
+
