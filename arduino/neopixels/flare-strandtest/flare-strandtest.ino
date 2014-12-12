@@ -5,7 +5,7 @@
 static const char* NAME = "Tony";
 static const int ADVERTISEMENT_INTERVAL = 675;
 static bool connectionStatus = false;
-int pixelLength = 16; // LED for GPIO 2
+int pixelLength = 16; // LED for GPIO 5
 
 void advertise(uint32_t ms) {
   //start advertising
@@ -32,6 +32,8 @@ void RFduinoBLE_onDisconnect() {
 }
 
 void setup() {
+  delay(2000);
+  
   // Set Device Parameters
   RFduinoBLE.deviceName = NAME;
   RFduinoBLE.advertisementInterval = ADVERTISEMENT_INTERVAL;
@@ -46,9 +48,11 @@ void loop() {
   if (connectionStatus == true) {
     colorOn(1);
     turnOffLights();
+    delay(100);
   } else {
     colorOn(2);
     turnOffLights();
+    delay(100);
   }
   //RFduino_ULPDelay(350); // Ultra Low Power Delay for 350 milliseconds
 }
@@ -62,7 +66,7 @@ void colorOn(int val) {
         set_pixel_color(i, Color(0, 255, 0));
       }
       else if (val == 2) { //blue
-        set_pixel_color(i, Color(0, 0, 255));
+        set_pixel_color(i, Color(0, 0, 56));
       } else { //white
         set_pixel_color(i, Color(56, 56, 56));
       }
@@ -72,7 +76,7 @@ void colorOn(int val) {
 }
 
 void turnOffLights() {
-  for (int i = pixelLength-1; i > 0; i--) {
+  for (int i = 0; i < pixelLength; i++) {
     set_pixel_color(i, Color(0, 0, 0));
   }
   show();
